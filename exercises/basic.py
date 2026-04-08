@@ -1,71 +1,40 @@
-# 1. 字符串和 f-string
-from zlib import MAX_WBITS
+# 1. 变量定义，Python不写类型，没有;
+a = 10
+b = 2.4
+str = "Hello, World!"
+# Python 变量名没有固定类型，可以随时改变
+a = "Hello, World!"
+print(a)
+# 但是，不能类型不匹配
+# 1 + "1" 会报错
 
 
-name = "Alice"
-age = 25
-city = "Beijing"
-print(f"{name} 今年 {age} 岁，来自 {city}")
-print(f"{name} 的名字长度是 {len(name)}")
-print(name.upper())
+# 2. 四个单位一个缩进，同一缩进就是同一代码块
+# :冒号开始代码块
+if a > 10:
+    print("a is greater than 10")
+else:
+    print("a is less than 10")
 
+# 3. 输入输出简单
+x = input("Enter a number: ")  # 一定注意，input返回的是字符串
+print(x)
+x = int(input("Enter a number: "))
+print(x)
 
-# 2. 列表循环
-scores = [85, 92, 88, 95]
-print("成绩:")
-for i in scores:
-    print(i)
-
-total = 0
-for j in scores:
-    total += j
-print("总分:",total)
-
-print(f"平均分: {total / len(scores) : .1f}")
-
-# 列表操作
-numbers = [3, 7, 2, 9, 1, 5, 8, 4, 6]
-big_nums = []
-small_nums = []
-for i in numbers:
-    if(i > 5):
-        big_nums.append(i)
-    else:
-        small_nums.append(i)
-
-print(f"大于 5 的数字: {big_nums}")
-print(f"小于等于 5 的数字: {small_nums}")
-print(f"small_nums的长度: {len(small_nums)}; big_nums的长度: {len(big_nums)}")
-print()
-
-# 字典
-student = {
-    "Alice": 85,
-    "Bob": 92,
-    "Charlie": 78,
-    "Diana": 88,
-    "Eve": 95
-}
-for key,value in student.items():
-    print(f"{key}:{value}")
-
-max = 0
-min = 100
-max_name = ""
-min_name = ""
-total = 0
-# 这里就固定死了 name就是key，score就是value
-for name,score in student.items():
-    total += value
-    if score > max:
-        max = score
-        max_name = name
-    if score < min:
-        min = score
-        min_name = name
-
-print(f"成绩最高:{max_name}:{max}")
-print(f"成绩最低:{min_name}:{min}")
-print(f"平均成绩: {total / len(student) : .1f}")
-
+# 4. 基础数据类型 int float bool str
+# 容器类型
+# 4.1. list 类似vector
+nums = [1,2,3] # 数组用[]包围
+nums.append(4) # 追加元素
+# 切片 [begin:end:step] [开始,结束)step是步长，左闭右开，和迭代器一样
+# 支持逆序
+# 10 20 30 40 50
+# 0  1  2  3  4  
+# -5 -4 -3 -2 -1
+arr = [10,20,30,40,50]
+print(arr[0:3:2]) # [10,30]
+print(arr[::-1]) # [50,40,30,20,10]
+print(arr[::2]) # [10,30,50]
+print(arr[1::2]) # [20,40]
 
