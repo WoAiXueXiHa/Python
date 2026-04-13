@@ -82,4 +82,4 @@ print(type(null))
 print(a + b)
 print(len(c))
 print(c[0])
-print(not is_ok)
+print(not is_ok) # 取反 not
